@@ -1,6 +1,13 @@
 pipeline {
     agent any
 
+
+    enviroments {
+        CI = 'true'
+        ARTFACTORY_ACCESS_TOKEN = credentials('artfactory-access-token')
+    }
+
+
     stages {
 
         stage('Retrieving WAR file from JFrog Artifactory') {
